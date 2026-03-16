@@ -107,7 +107,6 @@ To run the bot **24/7** on a Linux server:
 1. Create a systemd service file:
 
 ```ini
-# /etc/systemd/system/telegram-reminders.service
 [Unit]
 Description=Telegram Reminders Bot
 After=network.target
@@ -115,7 +114,7 @@ After=network.target
 [Service]
 User=your_username
 WorkingDirectory=/path/to/bot
-ExecStart=/usr/bin/python3 bot.py
+ExecStart=/path/to/bot/venv/bin/python bot.py
 Restart=always
 
 [Install]
