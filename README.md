@@ -48,10 +48,19 @@ TOKEN = "YOUR_BOT_TOKEN"
 
 Replace `"YOUR_BOT_TOKEN"` with the token from BotFather.  
 
-3. Run the bot:
+3. Create a small **startup script** `start_bot.sh` in the bot folder:
 
 ```bash
+#!/bin/bash
+source /path/to/bot/venv/bin/activate
+cd /path/to/bot
 python bot.py
+```
+
+Make it executable:
+
+```bash
+chmod +x start_bot.sh
 ```
 
 ---
@@ -102,7 +111,7 @@ Example structure:
 
 ## 🔧 Systemd Setup (Optional)
 
-To run the bot **24/7** on a Linux server:
+To run the bot **24/7** on a Linux server using the startup script:
 
 1. Create a systemd service file:
 
@@ -114,7 +123,7 @@ After=network.target
 [Service]
 User=your_username
 WorkingDirectory=/path/to/bot
-ExecStart=/path/to/bot/venv/bin/python bot.py
+ExecStart=/path/to/bot/start_bot.sh
 Restart=always
 
 [Install]
@@ -135,10 +144,10 @@ sudo systemctl start telegram-reminders
 sudo systemctl status telegram-reminders
 ```
 
+✅ Now the bot will run inside your venv automatically.
+
 ---
 
 ## 📄 License
 
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.  
-
----
