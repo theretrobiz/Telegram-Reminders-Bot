@@ -23,7 +23,7 @@ Try the bot here: [@remindersuwubot](https://t.me/remindersuwubot) ✅
 ## 🛠 Requirements
 
 - Python 3.10+  
-- `python-telegram-bot` library  
+- `python-telegram-bot[job-queue]` library  
 
 ### Using a virtual environment (recommended)
 
@@ -32,7 +32,7 @@ python3 -m venv venv
 source venv/bin/activate   # Linux/Mac
 venv\Scripts\activate      # Windows
 pip install --upgrade pip
-pip install python-telegram-bot
+pip install python-telegram-bot[job-queue]
 ```
 
 ---
