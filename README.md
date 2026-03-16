@@ -52,8 +52,8 @@ Replace `"YOUR_BOT_TOKEN"` with the token from BotFather.
 
 ```bash
 #!/bin/bash
-source /path/to/bot/venv/bin/activate
 cd /path/to/bot
+source venv/bin/activate
 python bot.py
 ```
 
